@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Facebook content scrapper viewer">
+		<meta name="author" content="">
+		<title>Facebook Stop Scrapper</title>
+		<link rel="shortcut icon" type="image/png" href="./img/favicon.png"/>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+		<!--Google Map API-->
+		<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+		<!-- Bootstrap Core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap Core JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Custom CSS -->
+		<link href="css/one-page-wonder.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<style>
+		input[type=select], select {
+		padding: 12px 20px;   
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		}
+		input[type=text], select {
+		width: 40%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		}
+		input[type=button] {
+		width: 10%;
+		background-color: #222;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		}
+		input[type=radio] {
+		display:none;
+		}
+		input[type=radio]:checked + label:before {
+		content: "\2022";
+		color: #f3f3f3;
+		font-size: 30px;
+		text-align: center;
+		line-height: 18px;
+		}
+		.featurette {
+		padding-top: 0px;
+		}
+		body {
+		margin-top: 0px;
+		background-image: url('./img/patterns/crossword.png');
+		}
+		.header-image {
+		background-image: url('./img/road.jpg');
+		}
+	</style>
+	<body>
+		<!-- Navigation -->
+		<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Warn a Brother</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#stats">Stats</a>
+						</li>
+						<li>
+							<a href="#graph">Graphs</a>
+						</li>
+						<li>
+							<a href="#contribute">Info</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>-->
+		<!-- Full Width Image Header -->
+		<header class="header-image">
+			<div class="searchbox" id="searcher">
+				<div class="form-group">
+					<select class="form-control" id="search_id" onClick="search()">
+						<option disabled selected value> -- Select a district --</option>
+						<option>All</option>
+						<option>Aveiro</option>
+						<option>Beja</option>
+						<option>Braga</option>
+						<option>Bragança</option>
+						<option>Castelo Branco</option>
+						<option>Coimbra</option>
+						<option>Evora</option>
+						<option>Faro</option>
+						<option>Guarda</option>
+						<option>Leiria</option>
+						<option>Lisboa</option>
+						<option>Madeira</option>
+						<option>Portalegre</option>
+						<option>Porto</option>
+						<option>Santarem</option>
+						<option>Setubal</option>
+						<option>Viana de Castelo</option>
+						<option>Vila Real</option>
+						<option>Viseu</option>
+					</select>
+				</div>
+			</div>
+			<!--
+				<div class="searchbox" id="searcher">
+				<form>
+											
+				                               <input type="text" id="search_id" placeholder="District or date (ex: 21/05)" required>
+				                               <a href="#stats"><input onClick="search()" type="button" value="Search"></a><br>
+											<input id="district" type="radio" name="data" value="district" checked="checked">
+											<label for="district">District</label>
+											<input id="date" type="radio" name="data" value="date">
+											<label for="date">Date</label>
+				</form>
+				</div>
+				
+				-->
+			<!--<div class="headline" id="search">
+				<div class="container">
+				</div>
+			</div>-->
+		</header>
+		<!-- Page Content -->
+		<div class="container">
+			<hr class="featurette-divider">
+			<!-- First Featurette -->
+			<div id="cenas">
+			</div>
+			<!-- Second Featurette -->
+			<div class="row" id="cenas1" >
+				<div class='col-md-6 featurette' id='graph' >
+					<div id='donut-example'></div>
+					<p class="lead" style="text-align:center">Stop operations per month</p>
+				</div>
+				<div class='col-md-6 featurette' id='graph1' >
+					<div id='donut-example2'></div>
+					<p class="lead" style="text-align:center">Stop operations per hour</p>
+				</div>
+			</div>
+			<hr class="featurette-divider">
+			<!--
+				<div id="cenas2">
+					<div class='featurette' id='graph1'><div id='bar-example' style="height:400px;"></div></div>
+				</div>
+				<hr class="featurette-divider">
+				-->
+			<!-- Third Featurette -->
+			<!--
+				<div class="contribute" id="contribute">
+				<div class="warnit">
+				<h1>Did you see da police??</h1>
+				<form>
+										<label for="addresssub">Adress: </label>
+				                              <input type="text" placeholder="Adress..." required><br>
+										<label for="datesub">Date:  </label>
+				                              <input type="text" placeholder="Date (ex: 21/05)..." required><br>
+										<label for="timesub">Time:  </label>
+				                              <input type="text" placeholder="Time (ex: 23:50)..." required><br>
+										<label for="linksub">Link:  </label>
+				                              <input type="text" placeholder="GoogleMaps link..."><br>
+										<a href="#stats"><input onClick="history.go(0)" type="button" value="Submit"></a>
+				</form>
+				
+				
+				</div>
+				      
+				  </div>
+				
+				      <hr class="featurette-divider">
+				-->
+			<div class="featurette" id="contribute">
+				<div id="gmap_canvas" class="featurette-image img-circle img-responsive pull-left" style='overflow:hidden;height:520px;width:520px;'>
+					<style>
+						#gmap_canvas img{max-width:none!important;background:none!important}
+					</style>
+				</div>
+				<a href='http://maps-generator.com/'>map generator</a> 
+				<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=db804ee569b0e494e4bc118f7a7e7c29f67985fb'></script>
+				<script type='text/javascript'>
+					function init_map(){
+						var myOptions = {zoom:16,center:new google.maps.LatLng(41.1780989,-8.5957783), mapTypeId: google.maps.MapTypeId.ROADMAP};
+						map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+						marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(41.1780989,-8.5957783)});
+						infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br> Faculdade de Engenharia da Universidade do Porto<br>'});
+						google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
+						infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+					
+				</script>
+				<h2 class="featurette-heading" id="test">
+					Paradigmas de Programação			
+					<div id="teste">
+						<span class="text-muted"></span>
+					</div>
+				</h2>
+				<p class="lead">Trabalho realizado por: <br>
+					<span id="to"> Diogo Barroso	</span><br>
+					<span id="to"> José Pinto	</span><br>
+					<span id="to"> Miguel Fernandes	</span>			
+				</p>
+			</div>
+			<hr class="featurette-divider">
+			<!-- Footer -->
+			<footer>
+				<div class="row">
+					<div class="col-lg-12">
+						Created by: Diogo Barroso, José Pinto & Miguel Fernandes
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- /.container -->
+		<script>
+			Morris.Donut({
+							  element: 'donut-example',
+							  data: [{label: "Choose a district", value: 0},
+							  ]
+							});
+							
+							Morris.Donut({
+							  element: 'donut-example2',
+							  data: [{label: "Choose a district", value: 0},
+							  ]
+							});
+		</script>
+		<script>
+			Array.prototype.unique = function(){
+			for(var i = 0; i < this.length; i++){
+				if( this.indexOf(this[i], i+1) != -1 ){
+					this.splice(i,1);
+					i--;
+				}
+			}
+			return this.sort();
+			}
+			function search() {
+			
+				var district = "/" + $("#search_id").val();
+				console.log(district);
+				
+				$.ajax({
+				
+					type: "GET",
+					crossDomain: true,
+					url: "http://pi.jpdias.me:8080/stop" + district,
+					dataType: "json",
+					success: function(data){
+					console.log(data);
+					console.log("entrou success");
+					
+					var anoi = [];
+					var mesi = [];
+					var diai = [];
+					var horai = [];
+					var minutoi = [];
+					
+					var anof = [];
+					var mesf = [];
+					var diaf = [];
+					var horaf = [];
+					var minutof = [];
+					
+					var jan = 0;
+					var fev = 0;
+					var mar = 0;
+					var abr = 0;
+					var mai = 0;
+					var jun = 0;
+					var jul = 0;
+					var ago = 0;
+					var set = 0;
+					var out = 0;
+					var nov = 0;
+					var dez = 0;
+					
+					var h01 = 0;
+					var h02 = 0;
+					var h03 = 0;
+					var h04 = 0;
+					var h05 = 0;
+					var h06 = 0;
+					var h07 = 0;
+					var h08 = 0;
+					var h09 = 0;
+					var h10 = 0;
+					var h11 = 0;
+					var h12 = 0;
+					var h13 = 0;
+					var h14 = 0;
+					var h15 = 0;
+					var h16 = 0;
+					var h17 = 0;
+					var h18 = 0;
+					var h19 = 0;
+					var h20 = 0;
+					var h21 = 0;
+					var h22 = 0;
+					var h23 = 0;
+					var h24 = 0;
+					
+					var arrayaddress = [];
+			
+					
+					$("#cenas").html("<div class='featurette' id='stats'><table class='table table-striped' id='tabela'><thead><tr><th>Number</th><th>Distrito</th><th>Adress</th><th>Starting hour</th><th>Ending hour</th><th>Starting date</th><th>Ending date</th></tr></thead><tbody></tbody></table></div><hr class='featurette-divider'>");
+			
+					for (var i=0; i<data.length; i++){
+					
+					anoi[i] = data[i].start.substring(0, 4);
+					mesi[i] = data[i].start.substring(5, 7);
+					diai[i] = data[i].start.substring(8, 10);
+					horai[i] = data[i].start.substring(11, 13);
+					minutoi[i] = data[i].start.substring(14, 16);
+					
+					if(mesi[i] == '01')
+						jan++;
+						
+					if(mesi[i] == '02')
+						fev++;
+					
+					if(mesi[i] == '03')
+						mar++;
+						
+					if(mesi[i] == '04')
+						abr++;
+						
+					if(mesi[i] == '05')
+						mai++;
+						
+					if(mesi[i] == '06')
+						jun++;
+						
+					if(mesi[i] == '07')
+						jul++;
+						
+					if(mesi[i] == '08')
+						ago++;
+					
+					if(mesi[i] == '09')
+						set++;
+						
+					if(mesi[i] == '10')
+						out++;
+						
+					if(mesi[i] == '11')
+						nov++;	
+					
+					if(mesi[i] == '12')
+						dez++;
+						
+						
+						
+					if(horai[i] == '01')
+						h01++;
+						
+					if(horai[i] == '02')
+						h02++;
+					
+					if(horai[i] == '03')
+						h03++;
+						
+					if(horai[i] == '04')
+						h04++;
+						
+					if(horai[i] == '05')
+						h05++;
+						
+					if(horai[i] == '06')
+						h06++;
+						
+					if(horai[i] == '07')
+						h07++;
+						
+					if(horai[i] == '08')
+						h08++;
+					
+					if(horai[i] == '09')
+						h09++;
+						
+					if(horai[i] == '10')
+						h10++;
+						
+					if(horai[i] == '11')
+						h11++;	
+					
+					if(horai[i] == '12')
+						h12++;
+			
+					if(horai[i] == '13')
+						h13++;
+						
+					if(horai[i] == '14')
+						h14++;
+					
+					if(horai[i] == '15')
+						h15++;
+						
+					if(horai[i] == '16')
+						h16++;
+						
+					if(horai[i] == '17')
+						h17++;
+						
+					if(horai[i] == '18')
+						h18++;
+						
+					if(horai[i] == '19')
+						h19++;
+						
+					if(horai[i] == '20')
+						h20++;
+					
+					if(horai[i] == '21')
+						h21++;
+						
+					if(horai[i] == '22')
+						h22++;
+						
+					if(horai[i] == '23')
+						h23++;	
+					
+					if(horai[i] == '24')
+						h24++;
+						
+					
+					arrayaddress.push(data[i].address);
+					
+					
+					
+					console.log(arrayaddress);
+					
+					
+					if(!data[i].finish){
+						anof[i] = '????';
+						mesf[i] = '??';
+						diaf[i] = '??';
+						horaf[i] = '??';
+						minutof[i] = '??';
+					}else{
+					anof[i] = data[i].finish.substring(0, 4);
+					mesf[i] = data[i].finish.substring(5, 7);
+					diaf[i] = data[i].finish.substring(8, 10);
+					horaf[i] = data[i].finish.substring(11, 13);
+					minutof[i] = data[i].finish.substring(14, 16);
+					}
+					
+					$('#tabela tr:last').after("<tr><th scope='row'>" + (i+1) + "</th><td>" + data[i].district + "</td><td>" + data[i].address + "</td><td>" + horai[i] + ":" + minutoi[i] + "</td><td>" + horaf[i] + ":" + minutof[i] + "</td><td>" + diai[i] + "/" + mesi[i] + "/" + anoi[i] + "</td><td>" + diaf[i] + "/" + mesf[i] + "/" + anof[i] + "</td></tr>");
+					
+					
+					}
+					
+					var newaddress = arrayaddress.unique();
+					
+					var total = new Array(newaddress.length);
+					
+					
+					for(var k = 0; k<total.length; k++){
+						total[k] = 0;
+					}
+					
+					console.log(newaddress);
+					console.log(data.length);
+					
+					
+					for (var c = 0; c<data.length; c++){
+						for (var j = 0; j<newaddress.length; j++){
+								if(data[c].address == newaddress[j]){
+									total[j] = total[j] + 1;
+									console.log(total);
+								}
+						}
+					}
+					
+					console.log(newaddress[0]);
+					
+					Morris.Donut({
+					  element: 'donut-example',
+					  data: [{label: "January", value: jan},
+							{label: "February", value: fev},
+							{label: "March", value: mar},
+							{label: "April", value: abr},
+							{label: "May", value: mai},
+							{label: "June", value: jun},
+							{label: "July", value: jul},
+							{label: "August", value: ago},
+							{label: "September", value: set},
+							{label: "October", value: out},
+							{label: "November", value: nov},
+							{label: "December", value: dez}
+					  ]
+					});
+					
+					Morris.Donut({
+					  element: 'donut-example2',
+					  data: [{label: "01:00", value: h01},
+							{label: "02:00", value: h02},
+							{label: "03:00", value: h03},
+							{label: "04:00", value: h04},
+							{label: "05:00", value: h05},
+							{label: "06:00", value: h06},
+							{label: "07:00", value: h07},
+							{label: "08:00", value: h08},
+							{label: "09:00", value: h09},
+							{label: "10:00", value: h10},
+							{label: "11:00", value: h11},
+							{label: "12:00", value: h12},
+							{label: "13:00", value: h13},
+							{label: "14:00", value: h14},
+							{label: "15:00", value: h15},
+							{label: "16:00", value: h16},
+							{label: "17:00", value: h17},
+							{label: "18:00", value: h18},
+							{label: "19:00", value: h19},
+							{label: "20:00", value: h20},
+							{label: "21:00", value: h21},
+							{label: "22:00", value: h22},
+							{label: "23:00", value: h23},
+							{label: "24:00", value: h24}
+					  ]
+					});
+					
+					Morris.Bar({
+					  element: 'bar-example',
+					  data: [
+						{ y: newaddress[0], a: total[0] },
+						{ y: newaddress[1], a: total[1]  },
+						{ y: newaddress[2], a: total[2]  },
+						{ y: newaddress[3], a: total[3]  },
+						{ y: newaddress[4], a: total[4]  },
+						{ y: newaddress[5], a: total[5]  },
+						{ y: newaddress[6], a: total[6] }
+					  ],
+					  xkey: 'y',
+					  ykeys: 'a',
+					  labels: ['Series A', 'Series B'],
+					  gridTextSize: '10',
+					  resize: 'true'
+					});
+					
+					
+					
+					/*
+					$("#cenas").append("<div class='featurette' id='stats'><script src='https://maps.googleapis.com/maps/api/js?v=3.exp'><\/script><div id='gmap_canvas' class='featurette-image img-circle img-responsive pull-left' style='overflow:hidden;height:520px;width:520px;'><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><a href='http://maps-generator.com/'>map generator</a><script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=db804ee569b0e494e4bc118f7a7e7c29f67985fb'><\/script><script type='text/javascript'>function init_map(){var myOptions = {zoom:16,center:new google.maps.LatLng(41.1780989,-8.5957783), mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(41.1780989,-8.5957783)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br> Porto<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);<\/script><h2 class='featurette-heading' id='test'>" + data[0].district + "<div id='teste'><span class='text-muted'></span></div></h2><p class='lead'>From: " + data[0].start + "<br>To: " + data[0].finish + "</p></div><hr class='featurette-divider'>");
+					
+					for (var i=1; i<data.length; i++){
+					
+					$("#cenas").append("<div class='featurette' id='stats'><script src='https://maps.googleapis.com/maps/api/js?v=3.exp'><\/script><div id='gmap_canvas' class='featurette-image img-circle img-responsive pull-left' style='overflow:hidden;height:520px;width:520px;'><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><a href='http://maps-generator.com/'>map generator</a><script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=db804ee569b0e494e4bc118f7a7e7c29f67985fb'><\/script><script type='text/javascript'>function init_map(){var myOptions = {zoom:16,center:new google.maps.LatLng(41.1780989,-8.5957783), mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(41.1780989,-8.5957783)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br> Porto<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);<\/script><h2 class='featurette-heading' id='test'>" + data[i].district + "<div id='teste'><span class='text-muted'></span></div></h2><p class='lead'>From: " + data[i].start + "<br>To: " + data[i].finish + "</p></div><hr class='featurette-divider'>");
+					
+					}
+					*/
+					
+					},
+					error: function(err){
+					console.log(err);
+					
+					}
+				});
+			}
+			
+			
+		</script>	
+	</body>
+</html>

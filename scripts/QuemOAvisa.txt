@@ -1,0 +1,638 @@
+{
+    "AVEIRO": [
+        {
+            "address": "Estrada de Santiago - Silvalde - Espinho",
+            "date": "18-mai-16",
+            "finish": "13H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Av. da R\u00e9gua - Ovar",
+            "date": "18-mai-16",
+            "finish": "19H00",
+            "start": "15H00"
+        },
+        {
+            "address": "Rua da Circunvala\u00e7\u00e3o - Santa Maria da Feira",
+            "date": "19-mai-16",
+            "finish": "13H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Av. Francisco S\u00e1 Carneiro - Ovar",
+            "date": "26-mai-16",
+            "finish": "13H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Rua 33, Anta - Espinho",
+            "date": "26-mai-16",
+            "finish": "19H00",
+            "start": "15H00"
+        },
+        {
+            "address": "Rua Oliveira J\u00fanior - S\u00e3o Jo\u00e3o da Madeira",
+            "date": "27-mai-16",
+            "finish": "13H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Rua Dr. Eduardo Vaz - Santa Maria da Feira",
+            "date": "27-mai-16",
+            "finish": "19H00",
+            "start": "15H00"
+        }
+    ],
+    "A\u00c7ORES": [
+        {
+            "address": "Estrada Regional, freguesia e concelho  S. Roque do Pico - DP HORTA",
+            "date": "10-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Estrada Regional n.\u00ba 1 de 1.\u00aa, lugar do Negrito, freguesia de S\u00e3o Mateus, concelho de Angra do Hero\u00edsmo - DP ANGRA",
+            "date": "17-mai-16",
+            "finish": "19H00",
+            "start": "13H00"
+        },
+        {
+            "address": "Estrada Regional n.\u00ba 1 de 2.\u00aa, Lugar do Cabo da Praia, concelho da Praia da Vit\u00f3ria - DP ANGRA",
+            "date": "20-mai-16",
+            "finish": "13H00",
+            "start": "07H00"
+        }
+    ],
+    "BEJA": [
+        {
+            "address": "Av. Salgueiro Maia - Beja",
+            "date": "03-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        },
+        {
+            "address": "EN - 255 Moura",
+            "date": "11-mai-16",
+            "finish": "17H00",
+            "start": "15H00"
+        },
+        {
+            "address": "Rua Zeca Afonso - Beja",
+            "date": "18-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        }
+    ],
+    "BRAGA": [
+        {
+            "address": "Av. S\u00e1 Carneiro - Bragan\u00e7a",
+            "date": "11-mai-16",
+            "finish": "02H00",
+            "start": "20H00"
+        },
+        {
+            "address": "Av. das Comunidades - Mirandela",
+            "date": "19-mai-16",
+            "finish": "14H00",
+            "start": "08H00"
+        }
+    ],
+    "CASTELO BRANCO": [
+        {
+            "address": "EN 233- Buenos Aire s- Castelo Branco",
+            "date": "09-mai-16",
+            "finish": "12H00",
+            "start": "10H00"
+        },
+        {
+            "address": "EN 18 - Vale do Romeiro - Castelo Branco",
+            "date": "18-mai-16",
+            "finish": "16H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Alameda P\u00earo  da Covilh\u00e3 - Covilh\u00e3",
+            "date": "24-mai-16",
+            "finish": "12H00",
+            "start": "08H00"
+        }
+    ],
+    "COIMBRA": [
+        {
+            "address": "RU, Centro escolar de S.Juli\u00e3o, Figueira da Foz",
+            "date": "03-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "EN 341 \u2013 km 47, Coimbra",
+            "date": "05-mai-16",
+            "start": "09H30"
+        },
+        {
+            "address": "IC 1 \u2013 Ferrugenta,Figueira da Foz",
+            "date": "06-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. Dr. El\u00edsio de Moura, Coimbra",
+            "date": "09-mai-16",
+            "start": "15H00"
+        },
+        {
+            "address": "Ponte Edgar Cardoso, Figueira da Foz",
+            "date": "11-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. D. Joao Alves, Figueira da Foz",
+            "date": "18-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Estrada de Coimbra, Figueira da Foz",
+            "date": "23-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Av. Dr. Francisco S\u00e1 Carneiro,Figueira da Foz",
+            "date": "27-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. C\u00f3nego Urbano Duarte, Coimbra",
+            "date": "30-mai-16",
+            "start": "16H00"
+        }
+    ],
+    "FARO": [
+        {
+            "address": "Av. V6  - Portim\u00e3o",
+            "date": "04-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        },
+        {
+            "address": "S\u00edtio do Moli\u00e3o - EN 125 - Lagos",
+            "date": "11-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        },
+        {
+            "address": "EN 125, Km 135 - Tavira",
+            "date": "13-mai-16",
+            "finish": "23H30",
+            "start": "21H00"
+        },
+        {
+            "address": "Av. Dom Jo\u00e3o VI \u2013 Olh\u00e3o",
+            "date": "13-mai-16",
+            "finish": "12H30",
+            "start": "08H30"
+        },
+        {
+            "address": "EN 125 - Faro",
+            "date": "19-mai-16",
+            "finish": "00H00",
+            "start": "21H00"
+        },
+        {
+            "address": "EN 125 - Faro",
+            "date": "23-mai-16",
+            "finish": "16H00",
+            "start": "14H30"
+        },
+        {
+            "address": "Av. de Castro Marim  - Vila Real de Santo Ant\u00f3nio",
+            "date": "31-mai-16",
+            "finish": "12H30",
+            "start": "09H00"
+        }
+    ],
+    "GUARDA": [
+        {
+            "address": "Estrada do Rio Diz - Guarda",
+            "date": "04-mai-16",
+            "start": "08H00"
+        }
+    ],
+    "LEIRIA": [
+        {
+            "address": "Av. Nogent Sur de Marne \u2013 junto as bombas de combust\u00edvel da Galp \u2013 Calhau - Nazar\u00e9",
+            "date": "19-mai-16",
+            "finish": "17H00",
+            "start": "14H00"
+        },
+        {
+            "address": "EN 237 \u2013 Souto - Pombal",
+            "date": "24-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        }
+    ],
+    "LISBOA": [
+        {
+            "address": "Av. Bras\u00edlia, Lisboa",
+            "date": "3-mai-16",
+            "start": "14H30"
+        },
+        {
+            "address": "Estrada dos Salgados/Falagueira",
+            "date": "4-mai-16",
+            "finish": "17H00",
+            "start": "08H00"
+        },
+        {
+            "address": "Ponte 25 de Abril lado N/Sul",
+            "date": "6-mai-16",
+            "finish": "11H30",
+            "start": "07H30"
+        },
+        {
+            "address": "IC19/Sentido Sintra/Lisboa",
+            "date": "7-mai-16",
+            "finish": "01H00",
+            "start": "21H00"
+        },
+        {
+            "address": "Av. Marginal St.\u00ba Amaro de Oeiras , sentido Lisboa /Cascais (km 8.2)",
+            "date": "11-mai-16",
+            "finish": "12H30",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. Infante D. Henrique Sentido N/S",
+            "date": "13-mai-16",
+            "start": "07H30"
+        },
+        {
+            "address": "IP7 \u2013 Sentido N/Sul + Sul/N",
+            "date": "14-mai-16",
+            "finish": "01H00",
+            "start": "21H00"
+        },
+        {
+            "address": "EN 10, Km 123.7, sentido Vila Franca-Alhandra, em Alhandra",
+            "date": "18-mai-16",
+            "finish": "18h00",
+            "start": "14H00"
+        },
+        {
+            "address": " Rua Ant\u00f3nio S\u00e9rgio, S. Ant.\u00ba dos Cavaleiros (Escola Secund\u00e1ria Humberto Delgado)",
+            "date": "19-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Rua Almirante Gago Coutinho, Ramada",
+            "date": "20-mai-16",
+            "finish": "17H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Mem Martins, Av. Capit\u00e3es de Abril",
+            "date": "25-mai-16",
+            "finish": "11H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Rio de Mouro, Rua Elias Garcia",
+            "date": "26-mai-16",
+            "finish": "16H00",
+            "start": "14H30"
+        }
+    ],
+    "MADEIRA": [
+        {
+            "address": "Via Expresso 3 Km 1 - Ribeira Brava",
+            "date": "03-mai-16",
+            "start": "04H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "04-mai-16",
+            "start": "07H00"
+        },
+        {
+            "address": "Estrada de Santa Catarina - Santa Cruz",
+            "date": "05-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Estrada Engenheiro Santos Costa",
+            "date": "09-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "10-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Via Expresso 5 - Camacha",
+            "date": "12-mai-16",
+            "start": "18H00"
+        },
+        {
+            "address": "Rua Manuel dos Passos - Machico",
+            "date": "13-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "16-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Estrada do Aeroporto - Cani\u00e7o",
+            "date": "17-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "VR 1 - Gaula",
+            "date": "18-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "19-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "VE 1 - Moinhos - Faial| T\u00fanel do Cortado",
+            "date": "19-mai-16",
+            "start": "17H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "20-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua da Ribeira de  Machico",
+            "date": "23-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua Manuel dos Passos - Machico",
+            "date": "24-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Estrada Ponta da Oliveira",
+            "date": "25-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "26-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Estrada Engenheiro Santos Costa",
+            "date": "27-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "30-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "VR 1 KM 6.0 - Quinta Grande",
+            "date": "30-mai-16",
+            "start": "13H00"
+        },
+        {
+            "address": "VR 1",
+            "date": "31-mai-16",
+            "start": "17H00"
+        }
+    ],
+    "PORTALEGRE": [
+        {
+            "address": "Av. do Bonfim -Portalegre",
+            "date": "04-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. da Estremadura Espanhola - Portalegre",
+            "date": "12-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. do Dia de Portugal - Elvas",
+            "date": "19-mai-16",
+            "start": "07H30"
+        },
+        {
+            "address": "Av. da Europa - Elvas",
+            "date": "31-mai-16",
+            "start": "16H00"
+        }
+    ],
+    "PORTO": [
+        {
+            "address": "Rua Ribeiro Cambado - Valongo",
+            "date": "10-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Estrada da Circunvala\u00e7\u00e3o \u2013 11089 - Porto",
+            "date": "17-mai-16",
+            "finish": "24H00",
+            "start": "20H00"
+        },
+        {
+            "address": "Rua das R\u00e3s \u2013 Santo Tirso",
+            "date": "18-mai-16",
+            "finish": "12H00",
+            "start": "08H00"
+        },
+        {
+            "address": "Via  Eng. Edgar  Cardoso \u2013 V.N.Gaia",
+            "date": "25-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Estrada D. Miguel  - Gondomar",
+            "date": "27-mai-16",
+            "finish": "12H00",
+            "start": "08H00"
+        },
+        {
+            "address": "Av. AEP - Porto",
+            "date": "30-mai-16",
+            "finish": "24H00",
+            "start": "20H00"
+        }
+    ],
+    "SANTAR\u00c9M": [
+        {
+            "address": "EN n.\u00ba 3 - Cartaxo",
+            "date": "03-mai-16",
+            "finish": "12H30",
+            "start": "08H30"
+        },
+        {
+            "address": "AV. dos Bombeiros Volunt\u00e1rios de Our\u00e9m",
+            "date": "05-mai-16",
+            "finish": "12H00",
+            "start": "08H00"
+        },
+        {
+            "address": "AV. Ant\u00f3nio Farinha Pereira  -  Abrantes",
+            "date": "09-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua Atriz Alda Rodrigues - Santar\u00e9m",
+            "date": "10-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua da Cerrada Grande - Torres Novas",
+            "date": "16-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua Escola Regentes Agricolas - Santar\u00e9m",
+            "date": "17-mai-16",
+            "finish": "14H00",
+            "start": "10H00"
+        },
+        {
+            "address": "EN 110, Carvalhos de Figueiredo - Tomar",
+            "date": "19-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua Maria de Lurdes Infante da C\u00e2mara - Cartaxo",
+            "date": "23-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Rua do Progresso - Cartaxo",
+            "date": "24-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        }
+    ],
+    "SETUBAL": [
+        {
+            "address": "EN 10-3 - Barreiro",
+            "date": "09-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "Largo 1\u00ba Maio ( T\u00fanel ), sentido Costa da Caparica - Almada",
+            "date": "10-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "Estrada Nacional 10-4 - Set\u00fabal",
+            "date": "20-mai-16",
+            "start": "15H00"
+        },
+        {
+            "address": "Circular externa - Montijo",
+            "date": "25-mai-16",
+            "start": "14H00"
+        },
+        {
+            "address": "AV. Mar - Amora",
+            "date": "31-mai-16",
+            "start": "15H00"
+        }
+    ],
+    "VIANA DO CASTELO": [
+        {
+            "address": "Av. Paulo VI - Darque \u2013 Viana do Castelo",
+            "date": "03-mai-16",
+            "finish": "23H30",
+            "start": "20H30"
+        },
+        {
+            "address": "Av. 25 de abril - Viana do Castelo",
+            "date": "10-mai-16",
+            "finish": "12H30",
+            "start": "09H30"
+        },
+        {
+            "address": "Via Foral Dona Teresa \u2013 Ponte de Lima",
+            "date": "23-mai-16",
+            "finish": "23H00",
+            "start": "20H00"
+        }
+    ],
+    "VILA REAL": [
+        {
+            "address": "Av. Rainha D. Am\u00e9lia \u2013 Chaves",
+            "date": "06-mai-16",
+            "finish": "12H00",
+            "start": "09H00"
+        },
+        {
+            "address": "Av. Aureliano Barrigas \u2013 Vila Real",
+            "date": "09-mai-16",
+            "finish": "10H00",
+            "start": "08H00"
+        },
+        {
+            "address": "Rua da Paz  \u2013 Chaves",
+            "date": "12-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Variante de Vila Nova \u2013 Vila Real",
+            "date": "19-mai-16",
+            "finish": "15H30",
+            "start": "13H30"
+        },
+        {
+            "address": "Rua da Paz  \u2013 Chaves",
+            "date": "20-mai-16",
+            "finish": "18H00",
+            "start": "14H00"
+        },
+        {
+            "address": "Av. Regimento Infantaria n\u00ba. 13 \u2013 Vila Real",
+            "date": "30-mai-16",
+            "finish": "10H00",
+            "start": "08H00"
+        }
+    ],
+    "\u00c9VORA": [
+        {
+            "address": "Av. Lino de Carvalho - \u00c9vora",
+            "date": "03-mai-16",
+            "start": "11H30"
+        },
+        {
+            "address": "Estrada Nacional 18 ao GIL - Estremoz",
+            "date": "06-mai-16",
+            "start": "08H00"
+        },
+        {
+            "address": "EN 18 ao 2.\u00ba Bairro do Frei Aleixo - \u00c9vora",
+            "date": "07-mai-16",
+            "start": "10H30"
+        },
+        {
+            "address": "EN 114-4  sentido Arraiolos - \u00c9vora",
+            "date": "22-mai-16",
+            "start": "10H00"
+        },
+        {
+            "address": "Av. Lino Carvalho - \u00c9vora",
+            "date": "25-mai-16",
+            "start": "09H30"
+        }
+    ]
+}
